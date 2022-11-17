@@ -17,22 +17,22 @@ run mem pc acc = do
     let check = checkMemory mem
     -- print ( checkMemory mem )
     if not check then error "Overflow or invalid memory position" else do
-    let instruct = getMemoryValue mem pc
-    print "=-=-=-=-="
-    print (instruct, pc, acc)
-    print "---------"
-    dump mem
-    case instruct of
-        2  -> lod mem pc acc 
-        4  -> sto mem pc acc
-        6  -> jmp mem pc acc
-        8  -> jmz mem pc acc
-        10 -> cpe mem pc acc
-        14 -> add mem pc acc
-        16 -> sub mem pc acc
-        18 -> nop mem pc acc
-        20 -> hlt mem pc acc
-        _  -> print "Error"
+        let instruct = getMemoryValue mem pc
+        print "=-=-=-=-="
+        print (instruct, pc, acc)
+        print "---------"
+        dump mem
+        case instruct of
+            2  -> lod mem pc acc 
+            4  -> sto mem pc acc
+            6  -> jmp mem pc acc
+            8  -> jmz mem pc acc
+            10 -> cpe mem pc acc
+            14 -> add mem pc acc
+            16 -> sub mem pc acc
+            18 -> nop mem pc acc
+            20 -> hlt mem pc acc
+            _  -> print "Error"
 
 
 checkMemory :: [(Int, Int)] -> Bool
