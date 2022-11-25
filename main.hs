@@ -1,5 +1,3 @@
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-{-# HLINT ignore "Eta reduce" #-}
 main :: IO ()
 main = do
     putStr "Digite o caminho do arquivo: "
